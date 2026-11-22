@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>김형일 · 게임 클라이언트 포트폴리오</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&amp;text=SKILLS&amp;display=swap">
+  <link rel="stylesheet" href="style.css?v=e399b499ae">
+</head>
+<body>
+<header class="site-bar">
+  <div class="bar-inner">
+    <a class="bar-title" href="#intro">KHI’s Portfolio</a>
+    <button class="menu-toggle" type="button" aria-controls="section-menu" aria-expanded="false" aria-label="바로가기 메뉴">☰</button>
+    <nav id="section-menu" class="section-nav" aria-label="섹션 바로가기">
+      <a href="#about">About me</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </div>
+</header>
+<script>
+  const bar = document.querySelector('.site-bar');
+  const toggle = bar.querySelector('.menu-toggle');
+  const setMenu = open => toggle.setAttribute('aria-expanded', String(open));
+  toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+  bar.addEventListener('click', event => { if (event.target.closest('a')) setMenu(false); });
+  bar.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      setMenu(false); toggle.focus();
+    }
+  });
+  const updateBar = () => bar.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', updateBar, { passive: true });
+  updateBar();
+</script>
+<main id="top">
+  <section id="intro" aria-labelledby="intro-title">
+    <h1 id="intro-title"><span>KIM HYEONGIL’S</span><span>PORTFOLIO</span></h1>
+    <p>안녕하세요.<br>게임 클라이언트 개발자 김형일입니다.</p>
+    <div class="intro-links"><a href="#projects">PROJECTS ↓</a></div>
+  </section>
+  <section id="about" class="profile-section">
+    <h2>ABOUT ME</h2>
+    <dl class="profile-facts">
+      <div><dt><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="7" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>이름</dt><dd>김형일</dd></div>
+      <div><dt><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4m10-4v4M3 10h18m-13 5h3"/></svg>생년월일</dt><dd><time datetime="2001-09-12">01.09.12</time></dd></div>
+      <div><dt><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m2 9 10-5 10 5-10 5zM6 11v5q6 5 12 0v-5m4-2v7"/></svg>학력</dt><dd>한국공학대학교(게임공학과)</dd></div>
+      <div><dt><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3h3l2 5-2 2q2 4 6 6l2-2 5 2v3q0 2-2 2C11 21 3 13 3 5q0-2 2-2z"/></svg>연락처</dt><dd>010-8001-4075</dd></div>
+      <div><dt><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>이메일</dt><dd>kim.hyeongil01@gmail.com</dd></div>
+      <!-- <div><dt><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0z"/><circle cx="12" cy="10" r="2"/></svg>위치</dt><dd>지역 입력</dd></div> -->
+      <div><dt><img class="fact-icon" src="assets/github.svg" alt="">GitHub</dt><dd><a href="https://github.com/kimhyeongil">kimhyeongil ↗</a></dd></div>
+    </dl>
+  </section>
+  <section id="skills" class="profile-section">
+    <h2>SKILLS</h2>
+    <dl class="skill-groups">
+      <div>
+        <dt><svg class="skill-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" fill="#88cbee"/><path d="M9 17v3m6-3v3m-8 1h10"/><rect x="5" y="6" width="14" height="8" rx="1" fill="#ffda63"/><path d="m9 8-2 2 2 2m5-4 2 2-2 2"/></svg>언어</dt>
+        <dd><ul>
+          <li style="--badge: #24699c">C++</li>
+          <li style="--badge: #63499c">HLSL</li>
+        </ul></dd>
+      </div>
+      <div>
+        <dt><svg class="skill-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path fill="#8fcdea" d="M7 6h10c2 0 3 2 4 5l1 5c.4 2-1.8 3.2-3.3 1.8L15 15H9l-3.7 2.8C3.7 19 1.6 18 2 16l1-5c1-3 2-5 4-5Z"/><path d="M7 9v4m-2-2h4"/><circle cx="16" cy="10" r="1" fill="#ffda63"/><circle cx="18.5" cy="12" r="1" fill="#ff9872"/></svg>게임 엔진</dt>
+        <dd><ul>
+          <li style="--badge: #17191d">Unreal Engine</li>
+        </ul></dd>
+      </div>
+      <div>
+        <dt><svg class="skill-icon" width="32" height="32" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffda63" d="m12 2 9 5v10l-9 5-9-5V7Z"/><path fill="#8fcdea" d="m12 12 9-5v10l-9 5Z"/><path d="m3 7 9 5v10m-5-12.8 9-5"/></svg>그래픽스 API</dt>
+        <dd><ul>
+          <li style="--badge: #367137">DirectX 12</li>
+          <li style="--badge: #3d637d">OpenGL</li>
+        </ul></dd>
+      </div>
+    </dl>
+  </section>
+  <section id="projects" aria-labelledby="project-title">
+    <h2 id="project-title"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7V5a1 1 0 0 1 1-1h6l2 3h8a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7z"/></svg>PROJECT</h2>
+    <figure class="lead">
+      <iframe title="MorphingMesh 캐릭터 변신 시연" src="https://www.youtube.com/embed/mt2sX2TpW2o?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=mt2sX2TpW2o&amp;playsinline=1" allow="autoplay; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <figcaption>
+        <p>대표작 · 실시간 캐릭터 모핑</p>
+        <h2 class="featured-title">MorphingMesh</h2>
+        <p class="project-period"><span>개발 기간 ·</span><strong>2026.04 – 2026.11</strong> · 개인 프로젝트</p>
+        <ul class="lead-tech" aria-label="사용 기술">
+          <li>C++</li>
+          <li>Unreal Engine</li>
+          <li>HLSL</li>
+        </ul>
+        <div class="lead-summary">
+          <p><strong>프로젝트 소개</strong> 메시 구조와 골격이 다른 캐릭터 사이에서, 변신 도중에도 표면의 질감과 골격 애니메이션이 이어지도록 하는 실시간 모핑 기법입니다.</p>
+          <p><strong>직접 구현</strong> 컴퓨트 셰이더로 원본 캐릭터의 거리장을 혼합해 중간 표면을 생성했습니다. 원본별 UV로 텍스처를 입히고, 각 골격의 본 가중치로 계산한 GPU 스키닝 결과를 혼합해 변신 중에도 동작이 이어지도록 했습니다.</p>
+          <p class="card-links"><a href="https://github.com/kimhyeongil/MorphingMesh" aria-label="MorphingMesh GitHub 저장소"><img class="github-icon" src="assets/github.svg" width="16" height="16" alt=""> GitHub ↗</a></p>
+        </div>
+      </figcaption>
+    </figure>
+
+    <div class="gallery" id="project-cards">
+      <article>
+        <div class="card-heading"><div><b class="card-index">PROJECT 01</b><h3><a href="https://www.youtube.com/watch?v=bn1UdyHl1-c">TimeThief</a></h3></div><div class="tech-tags"><small>C++</small><small>Unreal Engine</small></div></div>
+        <p class="project-period"><span>개발 기간 ·</span><strong>2025.11 – 2026.08</strong> · 팀 프로젝트</p>
+        <div class="card-body">
+          <a class="video-thumbnail" href="https://www.youtube.com/watch?v=bn1UdyHl1-c" aria-label="TimeThief 유튜브 영상 보기"><img src="assets/time.jpg" alt="TimeThief 전투"><span>[YouTube 시연 영상]</span></a>
+          <p><strong>게임 소개</strong> 멀티플레이 3인칭 슈팅 게임입니다.</p>
+          <p><strong>클라이언트 담당</strong> 캐릭터·무기 모핑, 캐릭터 애니메이션, 상점·인벤토리 UI와 미니맵을 구현했습니다.</p>
+        </div>
+        <div class="card-links"><a href="https://github.com/crapa36/TimeThief"><img class="github-icon" src="assets/github.svg" width="16" height="16" alt=""> GitHub ↗</a></div>
+      </article>
+      <article>
+        <div class="card-heading"><div><b class="card-index">PROJECT 02</b><h3><a href="https://youtu.be/n9aB8cAirsQ">Agar.io 모작</a></h3></div><div class="tech-tags"><small>C++</small><small>SFML</small><small>TCP</small></div></div>
+        <p class="project-period"><span>개발 기간 ·</span><strong>2024.10 – 2024.12</strong> · 팀 프로젝트</p>
+        <div class="card-body">
+          <a class="video-thumbnail" href="https://youtu.be/n9aB8cAirsQ" aria-label="Agar.io 모작 영상 보기"><img src="assets/ngp.jpg" alt="먹이 사이에서 크기가 다른 두 플레이어가 만나는 장면"><span>[YouTube 시연 영상]</span></a>
+          <p><strong>게임 소개</strong> 세포를 키우며 다른 플레이어와 경쟁하는 멀티플레이 게임입니다.</p>
+          <p><strong>담당 구현</strong> TCP 서버에서 중간 접속자에게 월드 상태를 전달하고, 먹이 재생성을 모든 클라이언트에 반영하는 기능을 구현했습니다.</p>
+        </div>
+        <div class="card-links"><a href="https://github.com/kimhyeongil/NGP_Project"><img class="github-icon" src="assets/github.svg" width="16" height="16" alt=""> GitHub ↗</a></div>
+      </article>
+      <article>
+        <div class="card-heading"><div><b class="card-index">PROJECT 03</b><h3><a href="https://youtu.be/PyAnNiGL7Ys">Bloxorz 모작</a></h3></div><div class="tech-tags"><small>C++</small><small>OpenGL</small><small>GLM</small></div></div>
+        <p class="project-period"><span>개발 기간 ·</span><strong>2023.11 – 2023.12</strong> · 팀 프로젝트</p>
+        <div class="card-body">
+          <a class="video-thumbnail" href="https://youtu.be/PyAnNiGL7Ys" aria-label="Bloxorz 모작 영상 보기"><img src="assets/cube.jpg" alt="눕힌 블록이 두 플랫폼 사이의 소멸 발판을 건너는 장면"><span>[YouTube 시연 영상]</span></a>
+          <p><strong>게임 소개</strong> 블록을 굴려 목적지까지 길을 찾는 3D 퍼즐 게임입니다.</p>
+          <p><strong>담당 구현</strong> 블록 이동, 타일 상호작용, 스테이지 데이터로 맵을 구성하는 로더를 구현했습니다.</p>
+        </div>
+        <div class="card-links"><a href="https://github.com/chohwanhee0625/ComputerGrapics_Project"><img class="github-icon" src="assets/github.svg" width="16" height="16" alt=""> GitHub ↗</a></div>
+      </article>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>
+
+
+
